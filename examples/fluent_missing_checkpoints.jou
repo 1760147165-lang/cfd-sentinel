@@ -1,0 +1,7 @@
+; Minimal example that intentionally lacks recoverable saves.
+/file/set-tui-version "23.1"
+/solve/initialize/initialize-flow
+ok
+/solve/iterate 5000
+/exit
+yes

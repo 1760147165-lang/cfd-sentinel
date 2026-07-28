@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+dist/
+build/
+
+# Secrets and local settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*
+secrets*
+
+# CFD models and generated results
+*.cas
+*.cas.h5
+*.dat
+*.dat.h5
+*.msh
+*.msh.h5
+*.trn
+*.raw
+*.raw.csv
+checkpoints/
+results/
+outputs/
+
+# Logs and local operating-system files
+*.log
+*.out
+.DS_Store
+Thumbs.db
