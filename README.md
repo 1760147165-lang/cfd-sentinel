@@ -148,6 +148,8 @@ automatically stop a solver after an alert.
 - OpenFOAM and STAR-CCM+ adapters
 - optional local dashboard and additional notification channels
 
+Release history is available in [CHANGELOG.md](CHANGELOG.md).
+
 ## Security and privacy
 
 CFD Sentinel does not require uploading meshes, case/data files, results, or
