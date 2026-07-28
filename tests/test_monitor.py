@@ -1,4 +1,3 @@
-import time
 import unittest
 from unittest import mock
 
@@ -10,10 +9,12 @@ class LogStateTests(unittest.TestCase):
     def test_fluent_residual_line_updates_iteration(self):
         state = LogState()
         previous = state.last_progress_time
-        time.sleep(0.001)
-        state.consume("  1000  1.2174e-02  1.0468e-05  1.7366e-05  0:00:00\n")
+        with mock.patch(
+            "cfd_sentinel.monitor.time.monotonic", return_value=previous + 1.0
+        ):
+            state.consume("  1000  1.2174e-02  1.0468e-05  1.7366e-05  0:00:00\n")
         self.assertEqual(state.last_iteration, 1000)
-        self.assertGreater(state.last_progress_time, previous)
+        self.assertEqual(state.last_progress_time, previous + 1.0)
 
     def test_known_fatal_marker_is_collected_once(self):
         state = LogState()
